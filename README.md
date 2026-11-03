@@ -4,7 +4,6 @@
 
 نام و نام خانوادگی: الناز بهاروند  
 شماره دانشجویی: 40231009  
-درس: مهندسی اینترنت
 
 ## بخش 1: اجرای سرویس فقط در شبکه داخلی
 
@@ -184,11 +183,5 @@ docker compose up -d --force-recreate proxy
 ```
 
 <div dir="rtl" align="right">
-
-### منابع
-
-- [راهنمای go-httpbin](https://github.com/mccutchen/go-httpbin)
-- [ساختار JWT در RFC 7519](https://www.rfc-editor.org/rfc/rfc7519)
-- [هدرهای اتصال و پراکسی در RFC 9110](https://www.rfc-editor.org/rfc/rfc9110)
 
 </div>
