@@ -1,0 +1,13 @@
+{
+  "name": "http-hw3",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node --env-file=.env src/proxy.mjs",
+    "setup": "node scripts/setup.mjs",
+    "token": "node --env-file=.env scripts/token.mjs",
+    "test": "node --test"
+  }
+}

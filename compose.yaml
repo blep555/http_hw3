@@ -1,0 +1,31 @@
+services:
+  legacy:
+    image: ghcr.io/mccutchen/go-httpbin:2.20.0
+    environment:
+      PORT: "8081"
+    expose:
+      - "8081"
+    networks:
+      - internal
+    restart: unless-stopped
+  proxy:
+    build: .
+    environment:
+      JWT_SECRET: ${JWT_SECRET:?Run npm run setup first}
+      JWT_ISSUER: ${JWT_ISSUER:-http-hw3}
+      JWT_AUDIENCE: ${JWT_AUDIENCE:-legacy-service}
+      UPSTREAM_URL: http://legacy:8081
+      HOST: 0.0.0.0
+      PORT: "3000"
+    ports:
+      - "80:3000"
+    depends_on:
+      - legacy
+    networks:
+      - edge
+      - internal
+    restart: unless-stopped
+networks:
+  edge:
+  internal:
+    internal: true
